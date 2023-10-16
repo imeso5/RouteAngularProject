@@ -1,0 +1,8 @@
+<div>
+  <input type="text" class="w-75 m-auto form-control p-3 my-5" placeholder="Search..">
+  <div class="row">
+    <div *ngFor="let product of products" class="col-md-3">
+      <app-product [product] ="product" ></app-product>
+    </div>
+  </div>
+</div>

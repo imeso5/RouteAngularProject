@@ -1,0 +1,12 @@
+<div>
+  <input type="text" class="w-75 m-auto form-control p-3 my-5" placeholder="Search..">
+  <div class="row">
+    <div *ngFor="let category of categories" class="col-md-3" (click)="showSubCats(category._id)">
+      <app-category [category] ="category" ></app-category>
+    </div>
+  </div>
+
+<div *ngFor="let subcat of subcats">
+  <div class="border rounded">{{subcat.name}}</div>
+</div>
+</div>

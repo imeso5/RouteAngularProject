@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Check Out</h1>
+  <form [formGroup]="checkOutForm" (ngSubmit)="checkOut()">
+    <label for="" class="my-2"> Details</label>
+    <input formControlName="details" type="details" placeholder="details..." class="form-control mb-1">
+    <div *ngIf="checkOutForm.controls['details'].errors && checkOutForm.controls['details'].touched" class="alert alert-danger">
+      <P *ngIf="checkOutForm.controls['details'].getError('required')">details is required</P>
+      <P *ngIf="checkOutForm.controls['details'].getError('details')">Enter Valid details</P>
+    </div>
+    <label for="" class="my-2"> Phone</label>
+    <input formControlName="phone" type="phone" placeholder="phone" class="form-control mb-1">
+    <div *ngIf="checkOutForm.controls['phone'].errors && checkOutForm.controls['phone'].touched" class="alert alert-danger">
+      <P *ngIf="checkOutForm.controls['phone'].getError('required')">phone is required</P>
+      <P *ngIf="checkOutForm.controls['phone'].getError('pattern')">Enter Valid phone</P>
+    </div>
+    <label for="" class="my-2"> City</label>
+    <input formControlName="city" type="city" placeholder="city" class="form-control mb-1">
+    <div *ngIf="checkOutForm.controls['city'].errors && checkOutForm.controls['city'].touched" class="alert alert-danger">
+      <P *ngIf="checkOutForm.controls['city'].getError('required')">phone is required</P>
+      <P *ngIf="checkOutForm.controls['city'].getError('pattern')">Enter Valid phone</P>
+    </div>
+
+    <button type="submit" class="bg-main text-white ms-auto d-block">Login</button>
+  </form>
+</div>

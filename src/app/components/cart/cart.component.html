@@ -1,0 +1,16 @@
+<button class="btn btn-danger ms-auto d-block" (click)="clearCartItem()">Clear Cart</button>
+<ng-container *ngIf="cartProducts && cartProducts.products.length && cartProducts.products.length > 0">
+  <ng-container *ngFor="let cartProduct of cartProducts.products">
+    <app-cart-item [cartItem]="cartProduct"></app-cart-item>
+  </ng-container>
+</ng-container>
+
+
+<div class="d-flex justify-content-between align-items-center">
+  <div class="col-6">
+    <span>Total Cart Price: {{cartProducts.totalCartPrice}}<b></b> EGP</span>
+  </div>
+  <div class="col-6">
+    <button class="btn btn-success" [routerLink]="'/checkout/'+cartProducts._id">Checkout</button>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div>
+  <input type="text" class="w-75 m-auto form-control p-3 my-5" placeholder="Search..">
+  <div class="row">
+    <div *ngFor="let brand of brands" class="col-md-3">
+      <app-brand [brand] ="brand" ></app-brand>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="product p-3 overflow-hidden">
+  <div class="cursor-pointer">
+    <img class="w-100" [src]="product.imageCover" alt="">
+    <h5 class="text-main">{{product.title}}</h5>
+    <h3 class="fw-bolder">{{product.category.name}}</h3>
+    <h4 class="fw-bolder">{{product.price}} EGP</h4>
+    <p>{{product.description}}</p>
+  </div>
+  <!-- <button class="btn bg-main text-white m-auto d-block">Add To Cart</button> -->
+  <app-add-to-cart [productId]="product._id"></app-add-to-cart>
+  <a class="fa-regular fa-heart align-items-center" (click)="addToWishList()"></a>
+  <i class="fa-solid fa-star" style="color: #f0ff24;"></i>
+  <h6 class="me-auto">{{product.ratingsAverage}}</h6>
+</div>

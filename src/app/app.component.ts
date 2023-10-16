@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './Services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'e-commerce';
+  constructor(private _AuthService:AuthService){
+    if(localStorage.getItem("userToken")!=null){
+      this._AuthService.isUserLoggedIn.next(true);
+    }
+  }
 }

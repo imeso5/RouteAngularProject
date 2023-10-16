@@ -1,0 +1,20 @@
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="cartItem.product.imageCover" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{cartItem.product.title}}</h5>
+        <p class="card-text">{{cartItem.price}}</p>
+        <p class="card-text"><small class="text-body-secondary">{{cartItem.product.description}}</small></p>
+        <button class="btn btn-danger"(click)="deleteCartItem(cartItem.product._id)">Delete Item</button>
+        <div class="text-end">
+          <button class="btn bg-main text-white m-2" (click)="onUpdateProductCount(cartItem.product._id, cartItem.count +1)">+</button>
+          <span>{{cartItem.count}}</span>
+          <button class="btn bg-main text-white m-2" (click)="onUpdateProductCount(cartItem.product._id, cartItem.count -1)">-</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
